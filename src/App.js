@@ -1,25 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import CoinDisplay from "./components/CoinDisplay";
+import Title from "./components/Title";
+import { useEffect, useState } from "react";
 
 function App() {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    fetch("https://api.coinstats.app/public/v1/coins?skip=0")
+      .then((response) => response.json())
+      .then((data) => setData(data.coins));
+  }, []);
+
+  const coins = data.map((item) => (
+    <CoinDisplay
+      key={item.id}
+      id={item.id}
+      icon={item.icon}
+      price={item.price}
+      rank={item.rank}
+    />
+  ));
+
+  console.log(coins);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Title />
+      {coins}
     </div>
   );
 }
 
 export default App;
+//
