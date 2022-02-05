@@ -1,15 +1,21 @@
 .coin--container {
   display: flex;
+  flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
   margin: auto;
+  margin-bottom: 10px;
   width: 25%;
   padding: 20px 40px;
   background-color: burlywood;
   border-radius: 15px;
 }
 
-.coin--info {
-  display: flex;
-  flex-direction: column;
+.coin--container > img {
+  width: 80px;
+  padding-bottom: 10px;
+}
+
+.overflow-hidden {
+  overflow: hidden;
 }
