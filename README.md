@@ -20,3 +20,4 @@ Run `npm start` after downloading the dependencies to start the development serv
 - [ ] CSS Styling improvements with a React CSS framework such as Boostrap or Material UI
 - [ ] Overhaul of the UI design to become more aesthetically pleasing and modern
 - [ ] Expand the number of crpytocurrencies displayed and the information each coin is presented
+- [ ] Create a mobile version
